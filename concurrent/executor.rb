@@ -5,12 +5,12 @@ import java.util.concurrent.Executors
 
 service = Executors.new_fixed_thread_pool 10
 
-for i in 1..20
-  service.execute {
+20.times do
+  service.execute do
     start = Time.new
     puts "Processando..."
     puts "Tempo: #{Time.new - start}"
-  }
+  end
 end
 
 service.shutdown
