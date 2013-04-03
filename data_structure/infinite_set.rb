@@ -6,6 +6,10 @@ contains = lambda {|set, element| set.(element) }
 
 union = lambda {|set1, set2| lambda {|element| set1.(element) || set2.(element) } }
 
+intersection = lambda {|set1, set2| lambda {|element| set1.(element) && set2.(element) } }
+
+add = lambda {|set, element| union.(set, singleton.(element)) }
+
 one = singleton.(1)
 two = singleton.(2)
 
